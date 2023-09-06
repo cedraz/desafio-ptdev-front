@@ -84,7 +84,6 @@ async function renderPosts() {
     const posts = await getPosts();
     const slicePosts = posts.slice(-6);
     slicePosts.reverse();
-    console.log(slicePosts);
 
     if (slicePosts.length == 1) {
       const attb = getAttributes(slicePosts[0]);
@@ -168,7 +167,7 @@ async function renderPosts() {
       }
     }
   } catch (error) {
-    heroPrincipalDiv.innerHTML = 'Erro ao carregar notícias';
+    heroPrincipalDiv.innerHTML = 'Não há notícias para essa categoria.';
   }
 }
 
