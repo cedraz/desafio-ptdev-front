@@ -49,7 +49,7 @@ function smallNews(postUrl, postImgUrl, imgDescripiton, category, title) {
       <a href="${postUrl}">
         <div class="small-news-sport small-news">
           <img
-            src="${`http://localhost:1337${postImgUrl}`}"
+            src="${postImgUrl}"
             alt="${imgDescripiton}"
             class="img-small"
           />

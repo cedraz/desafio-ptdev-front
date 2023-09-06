@@ -97,7 +97,10 @@ submitBtn.addEventListener('click', async (e) => {
     };
 
     const response = await (
-      await fetch('http://localhost:1337/api/auth/local/register', init)
+      await fetch(
+        'https://desafio-ptdev-back.onrender.com/api/auth/local/register',
+        init
+      )
     ).json();
     if (!response.error) {
       const { jwt, user } = response;
