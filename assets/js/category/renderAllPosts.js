@@ -21,7 +21,7 @@ async function renderAllPosts() {
                 <a href="${attb.postURL}">
                     <div class="news-card">
                         <img
-                            src="${`http://localhost:1337${attb.imgURL}`}"
+                            src="${attb.imgURL}"
                             alt="${attb.imgName}"
                             class="img-down"
                         />

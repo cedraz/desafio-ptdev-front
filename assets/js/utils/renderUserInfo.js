@@ -8,7 +8,7 @@ if (localStorage.getItem('data')) {
   const userInfoHTML = `
   
     <a class="login-a" href="/front/profile.html">
-        <img src="../front/assets/img/login-icon.svg" alt="login-icon" class="login-icon" />
+        <img src="./assets/img/login-icon.svg" alt="login-icon" class="login-icon" />
     </a>
         <div>    
             <p class="login-name">${userInfo.user.username}</p>
@@ -20,8 +20,8 @@ if (localStorage.getItem('data')) {
 }
 
 function logoutUser() {
-  localStorage.removeItem("data");
-  window.location.href = "index.html";
+  localStorage.removeItem('data');
+  window.location.href = 'index.html';
 }
 
 const logoutButton = document.getElementById('logoutButton');

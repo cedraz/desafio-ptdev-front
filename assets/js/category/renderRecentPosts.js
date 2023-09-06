@@ -25,7 +25,7 @@ function largePost(
                     <a href="${postURL}">
                         <div class="hero-first-news">
                             <img
-                            src="${`http://localhost:1337${imgURL}`}"
+                            src="${imgURL}"
                             alt="${imgName}" 
                             class="img-big"
                             />
@@ -35,7 +35,7 @@ function largePost(
                                 <div class="hero-author-infos">
                                     <p class="author">${authorName}</p>
                                     <img
-                                      src="../front/assets/img/bolinha.svg"
+                                      src="./assets/img/bolinha.svg"
                                       alt="ball"
                                     />
                                     <p class="data">${date}</p>

@@ -1,26 +1,26 @@
-import getAttributes from '../utils/getAttributes.js'
+import getAttributes from '../utils/getAttributes.js';
 
-const postContainer = document.querySelector('[post-container]')
-const urlParams = new URLSearchParams(window.location.search)
-const id = urlParams.get('id')
-const host = 'http://localhost:1337/api/posts/'
+const postContainer = document.querySelector('[post-container]');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+const host = 'http://localhost:1337/api/posts/';
 
 async function getPost() {
-  const url = `${host}${id}?populate=deep`
+  const url = `${host}${id}?populate=deep`;
 
   try {
-    const response = await fetch(url)
-    const { data } = await response.json()
-    return data
+    const response = await fetch(url);
+    const { data } = await response.json();
+    return data;
   } catch (err) {
-    console.log('An error occurred', err)
+    console.log('An error occurred', err);
   }
 }
 
 async function renderPost() {
-  const post = await getPost()
+  const post = await getPost();
   const { imgURL, authorImg, category, title, authorName, date, description } =
-    getAttributes(post)
+    getAttributes(post);
   const postHTML = `
     <p class="news-category">${category}</p>
     <p class="news-title">${title}</p>
@@ -31,7 +31,7 @@ async function renderPost() {
       <div class="news-column">
         <div class="news-authors">
           <img
-            src="${`http://localhost:1337${authorImg}`}"
+            src="${authorImg}"
             alt="autor"
             class="news-authors-img"
           />
@@ -42,7 +42,7 @@ async function renderPost() {
 
       <div class="news-notice">
         <img
-          src="${`http://localhost:1337${imgURL}`}"
+          src="${imgURL}"
           alt="imagemNotícia"
           class="news-notice-img"
         />
@@ -52,8 +52,8 @@ async function renderPost() {
         </p>
       </div>
     </div>
-    `
-  postContainer.innerHTML = postHTML
+    `;
+  postContainer.innerHTML = postHTML;
 }
 
-renderPost()
+renderPost();

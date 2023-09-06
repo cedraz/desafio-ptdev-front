@@ -20,7 +20,7 @@ function largeNews(
       <a href="${postURL}">
       <div class="large-news">
         <div class="category-img-wrapper">
-            <img src="${`http://localhost:1337${imgURL}`}" alt="#"
+            <img src="${imgURL}" alt="#"
             class="img-medium"/>
         </div>
         <div class="hero-infos-sport">
@@ -29,7 +29,7 @@ function largeNews(
           <div class="hero-author-infos">
             <p class="sport-author">${authorName}</p>
             <img
-              src="../front/assets/img/bolinha-verde.svg"
+              src="./assets/img/bolinha-verde.svg"
               alt="ball"
             />
             <p class="sport-data">${date}</p>
