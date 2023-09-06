@@ -3,7 +3,7 @@ import getAttributes from '../utils/getAttributes.js';
 const postContainer = document.querySelector('[post-container]');
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
-const host = 'http://localhost:1337/api/posts/';
+const host = 'https://desafio-ptdev-back.onrender.com/api/posts/';
 
 async function getPost() {
   const url = `${host}${id}?populate=deep`;

@@ -82,6 +82,7 @@ function smallPost(
 async function renderPosts() {
   try {
     const posts = await getPosts();
+    console.log(posts);
     const slicePosts = posts.slice(-6, posts.length);
     slicePosts.reverse();
 
