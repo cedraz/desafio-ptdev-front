@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axé Notícias | Login</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../front/assets/img/favicon.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../front/assets/css/login.css" />
+    <link rel="stylesheet" href="../front/assets/css/reset.css" />
+    <link rel="stylesheet" href="../front/assets/css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-container container">
+        <a class="header-logo-link" href="index.html#hero">
+          <img
+            src="../front/assets/img/logo.png"
+            alt="logo"
+            class="header-logo"
+          />
+        </a>
+        <img
+          class="navbar-responsive-icon"
+          src="./assets/img/bars.svg"
+          alt=""
+        />
+        <div class="navbar-login-container close">
+          <img
+            class="sidebar-close-icon"
+            src="./assets/img/x-close.svg"
+            alt="sidebar-close-icon"
+          />
+          <nav class="navbar">
+            <ul class="navbar-list">
+              <li><a href="index.html#hero">Home</a></li>
+              <li><a href="category.html?category=Esporte">Esporte</a></li>
+              <li>
+                <a href="category.html?category=Tecnologia">Tecnologia</a>
+              </li>
+              <li><a href="category.html?category=Arte">Arte</a></li>
+              <li><a href="category.html?category=Outros">Outros</a></li>
+            </ul>
+          </nav>
+          <div class="login">
+            <a href="./login.html" class="login-link">
+              <img
+                src="../front/assets/img/login-icon.svg"
+                alt="login-icon"
+                class="login-icon"
+              />
+            </a>
+            <div>
+              <p class="login-text">Faça seu</p>
+              <p class="login-text">
+                <a href="./login.html"><b class="login-text-bold">Login</b></a>
+                ou
+                <a href="./register.html"
+                  ><b class="login-text-bold">Cadastre-se</b></a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- INICIO CARD DE LOGIN -->
+
+    <main>
+      <section class="login-section">
+        <div class="login-container">
+          <div class="init-login-section">
+            <img
+              src="../front/assets/img/profile-icon.svg"
+              class="login-avatar"
+              alt="login-avatar"
+            />
+            <h1>Login</h1>
+          </div>
+          <form class="login-inputs">
+            <div class="user">
+              <input
+                type="text"
+                name="email-user"
+                id="email-input"
+                placeholder="Email ou Usuário"
+                class="inputs"
+                required
+              />
+
+              <div class="input-password">
+                <label id="lock-icon" for="password-user">
+                  <img id="eye" src="./assets/img/eye.svg" alt="olho" />
+                </label>
+
+                <input
+                  id="password-input"
+                  type="password"
+                  name="password-user"
+                  placeholder="Senha"
+                  class="inputs"
+                  required
+                />
+              </div>
+              <a href="#">Esqueceu a senha?</a>
+              <button class="btn-entrar">Entrar</button>
+            </div>
+          </form>
+          <p>Ainda não possui uma conta?</p>
+          <a href="./register.html" class="btn-cadastro">Cadastre-se agora</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FINAL DA SEÇÃO DE LOGIN -->
+
+    <footer class="footer">
+      <div class="newsletter">
+        <div class="container newsletter-div">
+          <p class="newsletter-title">Fique por Dentro das Notícias</p>
+          <form action="">
+            <fieldset class="newsletter-fildset">
+              <input
+                name="nome"
+                id="nomeCompleto"
+                type="text"
+                placeholder="Nome"
+                required
+                class="newsletter-input"
+              />
+              <input
+                name="email"
+                id="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Email"
+                required
+                class="newsletter-input"
+              />
+              <input
+                name="telefone"
+                id="telefone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="Telefone"
+                required
+                class="newsletter-input"
+              />
+              <input
+                name="cidade"
+                id="cidade"
+                type="text"
+                placeholder="Cidade"
+                required
+                class="newsletter-input"
+              />
+              <input class="submit-btn" type="submit" value="Enviar" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-infos container">
+        <div class="footer-infos-sac">
+          <img src="../front/assets/img/tell.svg" alt="tell" />
+          <div class="footer-infos-sac2">
+            <p class="sac-name">SAC</p>
+            <p>(71) 00000-0000</p>
+          </div>
+        </div>
+
+        <img
+          class="footer-logo-icon"
+          src="..//front/assets/img/logo-white.png"
+          alt="logo"
+        />
+
+        <ul class="footer-infos-icons">
+          <li>
+            <a href="#"><img src="./assets/img/whatsapp.svg" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/img/instagram.svg" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/img/mail.svg" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/img/map-pin.svg" alt="" /></a>
+          </li>
+        </ul>
+
+        <ul class="footer-home-links">
+          <li class="home"><a href="#">Home</a></li>
+          <li><a href="#">Esporte</a></li>
+          <li><a href="#">Tecnologia</a></li>
+          <li><a href="#">Arte</a></li>
+          <li><a href="#">Outros</a></li>
+        </ul>
+
+        <ul class="footer-contato-links">
+          <li><a href="#" class="contato">Contato</a></li>
+          <li><a href="#">Endereço</a></li>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Telefone</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./assets/js/utils/password.js"></script>
+    <script src="./assets/js/utils/scroll.js"></script>
+    <script src="./assets/js/utils/sidebar.js"></script>
+    <script src="./assets/js/login/login.js"></script>
+    <script type="module" src="./assets/js/utils/renderUserInfo.js"></script>
+  </body>
+</html>
