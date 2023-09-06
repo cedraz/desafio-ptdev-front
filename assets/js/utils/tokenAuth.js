@@ -5,9 +5,9 @@ export default function verifyToken() {
     const now = new Date().getTime();
     if (now - token.createdAt >= 1000 * 60 * 60) {
       localStorage.removeItem('data');
-      window.location.href = '/front/login.html';
+      window.location.href = 'login.html';
     }
   } else {
-    window.location.href = '/front/login.html';
+    window.location.href = 'login.html';
   }
 }

@@ -60,7 +60,7 @@ function smallPost(
               <a href="${postURL}">
                 <div class="hero-news">
                   <img
-                    src="${`http://localhost:1337${postImgURL}`}"
+                    src="${postImgURL}"
                     alt="${postImgName}"
                     class="img-down"
                   />

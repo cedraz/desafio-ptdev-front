@@ -1,7 +1,7 @@
 import changeDate from '../utils/changeDateFormat.js';
 
 export default function getAttributes(post) {
-  const postURL = `http://localhost:5500/news.html?id=${post.id}`;
+  const postURL = `news.html?id=${post.id}`;
   const imgURL = post.attributes.Image.data.attributes.url;
   const imgName = post.attributes.Image.data.attributes.name;
   const authorImg =
