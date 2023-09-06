@@ -28,7 +28,7 @@ commentBtn.addEventListener('click', async (e) => {
 
   const { token, user } = JSON.parse(localStorage.getItem('data'));
 
-  const url = `http://localhost:1337/api/comments`;
+  const url = `https://desafio-ptdev-back.onrender.com/api/comments`;
 
   if (value.length > 500) {
     alert('Seu comentário deve ter no máximo 500 caracteres');

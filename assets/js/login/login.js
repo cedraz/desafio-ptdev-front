@@ -11,7 +11,7 @@ submitButton.addEventListener('click', async (e) => {
 });
 
 async function login(identifier, password) {
-  const url = `http://localhost:1337/api/auth/local`;
+  const url = `https://desafio-ptdev-back.onrender.com/api/auth/local`;
 
   const init = {
     method: 'POST',

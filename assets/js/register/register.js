@@ -3,7 +3,7 @@ const form = document.querySelector('.singUp-inputs');
 const inputs = form.querySelectorAll('input');
 
 export async function register() {
-  const url = `http://localhost:1337/api/auth/local/register`;
+  const url = `https://desafio-ptdev-back.onrender.com/api/auth/local/register`;
 
   try {
     const response = await fetch(url);

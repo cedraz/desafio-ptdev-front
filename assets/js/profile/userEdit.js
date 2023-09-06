@@ -3,7 +3,7 @@ const userDiv = document.querySelector('.user');
 
 async function updateProfile({ name, username, email, birthday, token }) {
   const userID = JSON.parse(localStorage.getItem('data')).user.id;
-  const url = `http://localhost:1337/api/users/${userID}`;
+  const url = `https://desafio-ptdev-back.onrender.com/api/users/${userID}`;
   const body = {
     name,
     username,

@@ -2,7 +2,7 @@ import verifyToken from '../utils/tokenAuth.js';
 const userDiv = document.querySelector('.user');
 
 async function getProfile(token) {
-  const url = `http://localhost:1337/api/users/me`;
+  const url = `https://desafio-ptdev-back.onrender.com/api/users/me`;
   const init = {
     method: 'GET',
     headers: {
