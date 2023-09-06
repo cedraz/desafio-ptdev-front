@@ -84,6 +84,7 @@ async function renderPosts() {
     const posts = await getPosts();
     const slicePosts = posts.slice(-6);
     slicePosts.reverse();
+    console.log(slicePosts);
 
     if (slicePosts.length == 1) {
       const attb = getAttributes(slicePosts[0]);
