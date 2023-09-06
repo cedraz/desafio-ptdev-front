@@ -112,7 +112,7 @@ submitBtn.addEventListener('click', async (e) => {
         user,
       };
       localStorage.setItem('data', JSON.stringify(data));
-      window.location.href = `/front/index.html`;
+      window.location.href = `index.html`;
     } else {
       alert(response.error.message);
     }
