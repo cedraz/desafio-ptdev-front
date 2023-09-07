@@ -464,6 +464,11 @@ header {
 
 /* -- Sports section -- */
 
+.categories-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .section-top-sport {
   display: flex;
   justify-content: space-between;

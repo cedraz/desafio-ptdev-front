@@ -1,5 +1,5 @@
-export async function getPosts() {
-  const url = `https://desafio-ptdev-back.onrender.com/api/posts?populate=deep`;
+export default async function getPosts() {
+  const url = `https://desafio-ptdev-back.onrender.com/api/posts?pagination[pageSize]=200&sort[0]=id:desc&populate=deep`;
 
   try {
     const response = await fetch(url);

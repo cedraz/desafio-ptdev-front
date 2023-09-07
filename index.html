@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Axé Notícias | Home</title>
 
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="./assets/img/favicon.png"
-    />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
@@ -72,10 +67,10 @@
       </div>
     </header>
 
-    <main main-container>
-      <section id="hero" class="hero section">
+    <main>
+      <section id="hero" class="hero">
         <div class="container">
-          <h1>Últimas Notícias</h1>
+          <h1 class="category-name">Esporte</h1>
           <div class="hero-principal-div"></div>
 
           <div class="hero-news-container"></div>
@@ -135,6 +130,8 @@
       </section>
 
       <div class="line"></div>
+
+      <div class="categories-container" main-container></div>
     </main>
 
     <!--   FOOTER SECTION    -->
@@ -235,7 +232,10 @@
     <script src="./assets/js/utils/scroll.js"></script>
     <script src="./assets/js/utils/sidebar.js"></script>
     <script type="module" src="./assets/js/utils/renderUserInfo.js"></script>
-    <script type="module" src="./assets/js/home/renderRecentPosts.js"></script>
+    <script
+      type="module"
+      src="./assets/js/home/renderRecentPostsHome.js"
+    ></script>
     <script type="module" src="./assets/js/utils/getPost.js"></script>
     <script type="module" src="./assets/js/home/renderCategory.js"></script>
   </body>

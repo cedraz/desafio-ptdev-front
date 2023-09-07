@@ -1,4 +1,3 @@
-import { getPosts } from '../utils/getPost.js';
 import stringCutter from '../utils/stringCutter.js';
 import getAttributes from '../utils/getAttributes.js';
 import filterPosts from '../utils/filterByCategory.js';
