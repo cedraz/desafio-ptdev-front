@@ -84,94 +84,57 @@ function smallPost(
 }
 
 async function renderPosts() {
-  try {
-    const filteredPosts = await filterPosts(category);
-    const slicePosts = filteredPosts.slice(-6, filteredPosts.length);
-    slicePosts.reverse();
+  const filteredPosts = await filterPosts(category);
+  const recentPosts = filteredPosts.slice(0, 6);
 
-    if (slicePosts.length == 1) {
-      const attb = getAttributes(slicePosts[0]);
-      const firstPost = largePost(
-        attb.postURL,
-        attb.imgURL,
-        attb.imgName,
-        attb.category,
-        attb.title,
-        attb.authorName,
-        attb.date,
-        attb.description
-      );
+  if (recentPosts.length === 0) {
+    heroPrincipalDiv.innerHTML = 'Não há nenhum post para essa categoria.';
+    return;
+  }
 
-      heroPrincipalDiv.innerHTML += firstPost;
-    } else if (slicePosts.length == 2) {
-      const attb = getAttributes(slicePosts[0]);
-      const firstPost = largePost(
-        attb.postURL,
-        attb.imgURL,
-        attb.imgName,
-        attb.category,
-        attb.title,
-        attb.authorName,
-        attb.date,
-        attb.description
-      );
-      const attb2 = getAttributes(slicePosts[1]);
-      const secondPost = smallPost(
-        attb2.postURL,
-        attb2.imgURL,
-        attb2.imgName,
-        attb2.category,
-        attb2.title,
-        attb2.date,
-        attb2.description
-      );
+  if (recentPosts.slice(0, 1)) {
+    const firstPostAttributes = getAttributes(recentPosts.slice(0, 1)[0]);
+    const firstPost = largePost(
+      firstPostAttributes.postURL,
+      firstPostAttributes.imgURL,
+      firstPostAttributes.imgName,
+      firstPostAttributes.category,
+      firstPostAttributes.title,
+      firstPostAttributes.authorName,
+      firstPostAttributes.date,
+      firstPostAttributes.description
+    );
+    heroPrincipalDiv.innerHTML += firstPost;
+  }
 
-      heroPrincipalDiv.innerHTML += firstPost;
-      heroPrincipalDiv.innerHTML += secondPost;
-    } else {
-      const attb = getAttributes(slicePosts[0]);
-      const firstPost = largePost(
-        attb.postURL,
-        attb.imgURL,
-        attb.imgName,
-        attb.category,
-        attb.title,
-        attb.authorName,
-        attb.date,
-        attb.description
-      );
-      const attb2 = getAttributes(slicePosts[1]);
-      const secondPost = smallPost(
-        attb2.postURL,
-        attb2.imgURL,
-        attb2.imgName,
-        attb2.category,
-        attb2.title,
-        attb2.date,
-        attb2.description
-      );
-      slicePosts.shift();
-      slicePosts.shift();
+  if (recentPosts.slice(1, 2).length > 0) {
+    const secondPostAttributes = getAttributes(recentPosts.slice(1, 2)[0]);
+    const secondPost = smallPost(
+      secondPostAttributes.postURL,
+      secondPostAttributes.imgURL,
+      secondPostAttributes.imgName,
+      secondPostAttributes.category,
+      secondPostAttributes.title,
+      secondPostAttributes.date,
+      secondPostAttributes.description
+    );
+    heroPrincipalDiv.innerHTML += secondPost;
+  }
 
-      heroPrincipalDiv.innerHTML += firstPost;
-      heroPrincipalDiv.innerHTML += secondPost;
-
-      for (const i in slicePosts) {
-        const attb = getAttributes(slicePosts[i]);
-        const smallNewsPost = smallPost(
-          attb.postURL,
-          attb.imgURL,
-          attb.imgName,
-          attb.category,
-          attb.title,
-          attb.date,
-          attb.description
-        );
-        heroNewsContainer.innerHTML += smallNewsPost;
-      }
-    }
-  } catch (error) {
-    heroPrincipalDiv.innerHTML = 'Não há notícias para essa categoria.';
+  if (recentPosts.slice(2, 6).length > 0) {
+    recentPosts.slice(2, 6).map((post) => {
+      const thirdPostAttributes = getAttributes(post);
+      const thirdPost = smallPost(
+        thirdPostAttributes.postURL,
+        thirdPostAttributes.imgURL,
+        thirdPostAttributes.imgName,
+        thirdPostAttributes.category,
+        thirdPostAttributes.title,
+        thirdPostAttributes.date,
+        thirdPostAttributes.description
+      );
+      heroNewsContainer.innerHTML += thirdPost;
+    });
   }
 }
 

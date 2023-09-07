@@ -94,57 +94,53 @@ async function renderCategorySection(categories) {
 }
 
 async function renderCategoryPosts(categories) {
-  try {
-    categories.map(async (category) => {
-      const filteredPosts = await filterPosts(category.attributes.categoryName);
-      let categorySection = document.querySelector(
-        `#${category.attributes.categoryName}`
-      );
-      const largeNewsContainer = categorySection.querySelector(
-        '[category-posts-large]'
-      );
-      const smallNewsContainer = categorySection.querySelector(
-        '[category-posts-small]'
-      );
+  categories.map(async (category) => {
+    const filteredPosts = await filterPosts(category.attributes.categoryName);
+    const categorySection = document.querySelector(
+      `#${category.attributes.categoryName}`
+    );
+    const largeNewsContainer = categorySection.querySelector(
+      '[category-posts-large]'
+    );
+    const smallNewsContainer = categorySection.querySelector(
+      '[category-posts-small]'
+    );
 
-      if (filteredPosts) {
-        filteredPosts
-          .slice(-3)
-          .reverse()
-          .map((post) => {
-            const attb = getAttributes(post);
-            const largePost = largeNews(
-              attb.postURL,
-              attb.imgURL,
-              attb.category,
-              attb.title,
-              attb.description,
-              attb.date,
-              attb.authorName
-            );
-            largeNewsContainer.innerHTML += largePost;
-          });
-        filteredPosts
-          .slice(0, -3)
-          .reverse()
-          .map((post) => {
-            const attb = getAttributes(post);
-            const smallPost = smallNews(
-              attb.postURL,
-              attb.imgURL,
-              attb.imgName,
-              attb.category,
-              attb.title
-            );
-            smallNewsContainer.innerHTML += smallPost;
-          });
-      } else {
-        main.innerHTML = 'Não há posts registrados para essa categoria';
-      }
-    });
-  } catch (error) {
-    main.innerHTML = 'Erro ao carregas as notícias';
-  }
+    if (filteredPosts.length === 0) {
+      largeNewsContainer.innerHTML = 'Não há posts para essa categoria.';
+      return;
+    }
+
+    if (filteredPosts.slice(0, 3).length > 0) {
+      filteredPosts.slice(0, 3).map((post) => {
+        const attb = getAttributes(post);
+        const largePost = largeNews(
+          attb.postURL,
+          attb.imgURL,
+          attb.category,
+          attb.title,
+          attb.description,
+          attb.date,
+          attb.authorName
+        );
+        largeNewsContainer.innerHTML += largePost;
+      });
+    }
+
+    if (filteredPosts.slice(3, 9).length > 0) {
+      filteredPosts.slice(3, 9).map((post) => {
+        const attb = getAttributes(post);
+        const smallPost = smallNews(
+          attb.postURL,
+          attb.imgURL,
+          attb.imgName,
+          attb.category,
+          attb.title
+        );
+        smallNewsContainer.innerHTML += smallPost;
+      });
+    }
+  });
 }
 
 async function renderAll() {

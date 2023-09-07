@@ -21,9 +21,7 @@ async function updateProfile({ name, username, email, birthday, token }) {
   };
 
   const response = await (await fetch(url, init)).json();
-  if (!response.error) {
-    console.log(response);
-  } else {
+  if (response.error) {
     alert(response.error.message);
   }
 }

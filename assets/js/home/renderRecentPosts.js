@@ -82,6 +82,12 @@ function smallPost(
 async function renderPosts() {
   const posts = await getPosts();
   const recentPosts = posts.slice(0, 6);
+
+  if (recentPosts.length === 0) {
+    heroPrincipalDiv.innerHTML = 'Não há nenhum post.';
+    return;
+  }
+
   if (recentPosts.slice(0, 1)) {
     const firstPostAttributes = getAttributes(recentPosts.slice(0, 1)[0]);
     const firstPost = largePost(
@@ -97,7 +103,7 @@ async function renderPosts() {
     heroPrincipalDiv.innerHTML += firstPost;
   }
 
-  if (recentPosts.slice(1, 2)) {
+  if (recentPosts.slice(1, 2).length > 0) {
     const secondPostAttributes = getAttributes(recentPosts.slice(1, 2)[0]);
     const secondPost = smallPost(
       secondPostAttributes.postURL,
@@ -111,7 +117,7 @@ async function renderPosts() {
     heroPrincipalDiv.innerHTML += secondPost;
   }
 
-  if (recentPosts.slice(2, 6)) {
+  if (recentPosts.slice(2, 6).length > 0) {
     recentPosts.slice(2, 6).map((post) => {
       const thirdPostAttributes = getAttributes(post);
       const thirdPost = smallPost(

@@ -7,7 +7,7 @@ if (localStorage.getItem('data')) {
   const userInfo = JSON.parse(localStorage.getItem('data'));
   const userInfoHTML = `
   
-    <a class="login-a" href="/front/profile.html">
+    <a class="login-a" href="profile.html">
         <img src="./assets/img/login-icon.svg" alt="login-icon" class="login-icon" />
     </a>
         <div>    
